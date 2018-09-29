@@ -1,57 +1,138 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>API Level 0 Mission - Spring Boot</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Solution Demo by Jason Peng</title>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" href="css/bootcomplete.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/jquery.bootcomplete.js"></script>
+
 </head>
-
 <body>
-<div class="container">
-    <div class="row">
-        <div class="sect1">
-<h2 id="_http_booster">HTTP Booster</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>An example of simple mapping of a business operation to a remote endpoint. By taking this approach, clients use the HTTP protocol as a transport mechanism to call services. Application engineers define the APIs using a broad interpretation of the REST fundamentals, encouraging freedom in design and quick prototyping.</p>
-</div>
-<div class="sect2">
-<h3 id="_using_the_greeting_service">Using the greeting service</h3>
+	<nav class="navbar navbar-default navbar-pf" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"> <img
+				src="./assets/img/brand.svg" alt="Solution Demo by Jason Peng" />
+			</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-utility">
 
-</div>
-</div>
-</div>
+				<li class="dropdown"><a href="#0" class="nav-item-iconic"
+					id="horizontalDropdownMenu1" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="true"> <span title="Help"
+						class="fa pficon-help"></span> <span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" aria-labelledby="horizontalDropdownMenu1">
+						<li><a href="#0">Help</a></li>
+						<li><a href="#0">About</a></li>
+					</ul></li>
+				<li class="dropdown"><a href="#0" class="dropdown-toggle"
+					data-toggle="dropdown"> <span class="pficon pficon-user"></span>
+						Jason Peng <b class="caret"></b>
+				</a>
+					<ul class="dropdown-menu">
+						<li><a href="#0">Link</a></li>
+						<li><a href="#0">Another link</a></li>
+						<li><a href="#0">Something else here</a></li>
+						<li class="divider"></li>
+						<li class="dropdown-submenu"><a tabindex="-1" href="#0">More
+								options</a>
+							<ul class="dropdown-menu">
+								<li><a href="#0">Link</a></li>
+								<li><a href="#0">Another link</a></li>
+								<li><a href="#0">Something else here</a></li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li><a href="#0">Separated link</a></li>
+								<li class="divider"></li>
+								<li><a href="#0">One more separated link</a></li>
+							</ul></li>
+						<li class="divider"></li>
+						<li><a href="#0">One more separated link</a></li>
+					</ul></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-primary">
+				<li class="active"><a href="#0">Autocomplete</a></li>
+				<li><a href="#1">demo2</a></li>
+				<li><a href="#2">demo3</a></li>
+				<li><a href="#3">demo4</a></li>
+			</ul>
+		</div>
+	</nav>
 
-        <form class="form-inline">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="World">
-            </div>
-            <button id="invoke" type="submit" class="btn btn-success">Invoke</button>
-        </form>
+	<div class="container">
+		<!-- Just enjoy various PatternFly components -->
+		<!-- <div class="alert alert-success"> -->
+		<div class="container-fluid">
+			<div class="clearfix row" id="content">
+				<div id="main" class="col-md-12 clearfix" role="main">
+					<article class="post">
+						<section class="post_content">
+							<div class="sections sections-zebra">
+								<div class="row">
+									<header class="page-tabs-header">
+										<h1>ACME Online Store Product Category</h1>
+									</header>
+								</div>
+								<div class="row">
+									<div class="starter-template">
+										<!-- <h1>ACME Online Store Product Category</h1>  -->
+										<p class="lead">
+											An autocomplete demo for an E-commerce website.<br>
+										</p>
 
-        <p class="lead">Result:</p>
-        <pre><code id="greeting-result">Invoke the service to see the result.</code></pre>
-    </div>
-</div>
+										<input id="example1" type="text" name="country"
+											placeholder="Enter a Product Name" class="form-control">
+									</div>
+								</div>
+								<div class="row">
+									<div>
+										<h1>Architecture Diagram</h1>
+									</div>
+								</div>
+								<div class="row">
+									<div class="section-img">
+										<img alt="architecture"
+											src="./images/autocomplete-architecture.jpg">
+									</div>
+								</div>
+							</div>
+						</section>
+					</article>
+				</div>
+			</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
 
-<script>
-  $(document).ready(function () {
-    $("#invoke").click(function (e) {
-      var n = $("#name").val() || "World";
-      $.getJSON("/api/greeting?name=" + n, function (res) {
-        $("#greeting-result").text(JSON.stringify(res));
-      });
-      e.preventDefault();
-    });
-  });
-</script>
 
+			<script type="text/javascript">
+			$('#example1').bootcomplete({
+				url : 'autocomplete'
+			});
+		</script>
+		</div>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
 </body>
-
 </html>
