@@ -18,8 +18,8 @@
             idField : true,
             idFieldName : $(this).attr('name')+"_id",
             minLength : 3,
-            dataParams : {},
-            formParams : {}
+            dataParams : {'user_key':'c000f8299e06b864eea0b301fdd003d9'},
+              formParams : {}
         }
         
         var settings = $.extend( {}, defaults, options );
