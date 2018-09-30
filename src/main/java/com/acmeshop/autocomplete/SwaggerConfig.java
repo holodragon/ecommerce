@@ -1,4 +1,4 @@
-package com.acmeshop;
+package com.acmeshop.autocomplete;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
