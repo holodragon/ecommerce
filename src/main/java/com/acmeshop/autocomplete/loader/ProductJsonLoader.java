@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Scanner;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -16,20 +18,18 @@ import org.springframework.stereotype.Component;
 import com.acmeshop.autocomplete.datastore.AbstractAutocomplete.Stats;
 import com.acmeshop.autocomplete.datastore.IAutocompleteStore;
 import com.acmeshop.pojo.Product;
-import com.google.appengine.repackaged.com.google.gson.Gson;
-import com.google.appengine.repackaged.com.google.gson.GsonBuilder;
-import com.google.appengine.repackaged.com.google.gson.stream.JsonReader;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * ProductLoader
- * 
+ *
  * @author mborges
  *
  */
 
 @Component
 public class ProductJsonLoader implements CommandLineRunner {
-
+	// private static final Logger log = LoggerFactory.getLogger(ProductJsonLoader.class);
 	private Log log = LogFactory.getLog(ProductJsonLoader.class);
 
 	@Value("${autocomplete.json.load}")
@@ -56,25 +56,42 @@ public class ProductJsonLoader implements CommandLineRunner {
 
 	public Stats load() throws Exception {
 
+		log.info("in load");
 		try {
 			Reader in = new InputStreamReader(loadFile.getInputStream(), "UTF-8");
-			JsonReader reader = new JsonReader(in);
-			Gson gson = new GsonBuilder().create();
+			Scanner scan = new Scanner(in);
+//			JsonReader reader = new JsonReader(in);
+//			Gson gson = new GsonBuilder().create();
 
+
+//			Map<String, Object> jsonMap = mapper.readValue(in, Map.class);
+			ObjectMapper mapper = new ObjectMapper();
+
+			List<Product> products = mapper.readValue(in, mapper.getTypeFactory().constructCollectionType(List.class, Product.class));
 			// Read file in stream mode
-			reader.beginArray();
+//			reader.beginArray();
 			int total = 0;
-			while (reader.hasNext()) {
-				// Read data into object model
-				Product product = gson.fromJson(reader, Product.class);
+			for (Product product: products) {
 				store.addProduct(product.getSku(), product.getName() == null ? "" : product.getName());
 				total++;
 				if (total % 100 == 0) {
 					log.info(String.format("loaded %d records...", total));
 				}
-				// break;
 			}
-			reader.close();
+//			while (reader.hasNext()) {
+//			while (scan.hasNextLine()) {
+//				// Read data into object model
+////				Product product = gson.fromJson(reader, Product.class);
+//				Product product = mapper.readValue(scan.nextLine(), Product.class);
+//				store.addProduct(product.getSku(), product.getName() == null ? "" : product.getName());
+//				total++;
+//				if (total % 100 == 0) {
+//					log.info(String.format("loaded %d records...", total));
+//				}
+//				// break;
+//			}
+//			reader.close();
+//			scan.close();
 			if (in != null) {
 				in.close();
 			}

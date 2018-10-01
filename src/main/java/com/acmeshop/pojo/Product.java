@@ -8,46 +8,43 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-import com.google.appengine.repackaged.com.google.gson.annotations.Expose;
-import com.google.appengine.repackaged.com.google.gson.annotations.SerializedName;
-
 public class Product implements Serializable {
 
-	@SerializedName("sku")
-	@Expose
+	// @SerializedName("sku")
+	// @Expose
 	private String sku;
-	@SerializedName("name")
-	@Expose
+	// @SerializedName("name")
+	// @Expose
 	private String name;
-	@SerializedName("type")
-	@Expose
+	// @SerializedName("type")
+	// @Expose
 	private String type;
-	@SerializedName("price")
-	@Expose
+	// @SerializedName("price")
+	// @Expose
 	private Double price;
-	@SerializedName("upc")
-	@Expose
+	// @SerializedName("upc")
+	// @Expose
 	private String upc;
-	@SerializedName("category")
-	@Expose
+	// @SerializedName("category")
+	// @Expose
 	private List<Category> category = null;
-	@SerializedName("shipping")
-	@Expose
+	// @SerializedName("shipping")
+	// @Expose
 	private String shipping;
-	@SerializedName("description")
-	@Expose
+	// @SerializedName("description")
+	// @Expose
 	private String description;
-	@SerializedName("manufacturer")
-	@Expose
+	// @SerializedName("manufacturer")
+	// @Expose
 	private String manufacturer;
-	@SerializedName("model")
-	@Expose
+	// @SerializedName("model")
+	// @Expose
 	private String model;
-	@SerializedName("url")
-	@Expose
+	// @SerializedName("url")
+	// @Expose
 	private String url;
-	@SerializedName("image")
-	@Expose
+	// @SerializedName("image")
+	// @Expose
 	private String image;
 	private final static long serialVersionUID = 272879787532822582L;
 

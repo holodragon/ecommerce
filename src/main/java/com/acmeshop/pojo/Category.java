@@ -7,16 +7,13 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-import com.google.appengine.repackaged.com.google.gson.annotations.Expose;
-import com.google.appengine.repackaged.com.google.gson.annotations.SerializedName;
-
 public class Category implements Serializable {
 
-	@SerializedName("id")
-	@Expose
+//	@SerializedName("id")
+//	@Expose
 	private String id;
-	@SerializedName("name")
-	@Expose
+	// @SerializedName("name")
+	// @Expose
 	private String name;
 	private final static long serialVersionUID = 8887889962656783329L;
 
